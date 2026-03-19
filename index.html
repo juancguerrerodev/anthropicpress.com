@@ -109,7 +109,8 @@
   "datePublished": "2026",
   "inLanguage": "en",
   "bookFormat": "https://schema.org/EBook",
-  "url": "https://anthropicpress.com/"
+  "image": "https://anthropicpress.com/img/the-last-skill-cover.jpg",
+  "url": "https://www.amazon.com/dp/B0GSYGDR7L"
 }
 </script>
 
@@ -134,8 +135,8 @@
   }
 
   html, body {
-    width: 100%; height: 100%;
-    overflow: hidden;
+    width: 100%; min-height: 100%;
+    overflow-x: hidden;
     background: var(--cream);
     color: var(--ink);
   }
@@ -442,69 +443,41 @@
     margin-top: 4px;
   }
 
+  .book-cover {
+    width: 140px;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 4px 16px rgba(26, 26, 24, 0.18);
+    flex-shrink: 0;
+    object-fit: cover;
+  }
+
   .amazon-btn {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    padding: 14px 28px;
-    background: var(--ink);
-    color: var(--cream);
-    font-family: 'Space Mono', monospace;
-    font-size: 0.65rem;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
     text-decoration: none;
-    border-radius: 6px;
-    cursor: pointer;
+    flex-shrink: 0;
     transition: all 0.25s ease;
     position: relative;
-    flex-shrink: 0;
-    white-space: nowrap;
   }
 
   .amazon-btn:hover {
-    background: #2a2a26;
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(26, 26, 24, 0.3);
+    filter: brightness(1.1);
   }
 
   .amazon-btn:active { transform: translateY(0); }
 
-  .amazon-btn-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2px;
-  }
-
-  .amazon-btn-label {
-    font-size: 0.6rem;
-    letter-spacing: 1px;
-    color: var(--gold);
-    font-weight: 400;
-  }
-
-  .amazon-btn-wordmark {
-    font-family: 'Fraunces', Georgia, serif;
-    font-size: 1rem;
-    font-weight: 700;
-    color: var(--cream);
-    letter-spacing: 0.02em;
-    text-transform: none;
-    line-height: 1;
-  }
-
-  .amazon-smile {
-    display: flex;
-    align-items: center;
-    margin-top: 1px;
+  .amazon-badge {
+    height: 44px;
+    width: auto;
+    border-radius: 6px;
   }
 
   /* ── RESPONSIVE ── */
   @media (max-width: 480px) {
     body { padding: 1.2rem; justify-content: flex-start; padding-top: 2rem; }
-    html, body { overflow: auto; }
+    html, body { overflow-y: auto; }
     .headword { font-size: 2.8rem; }
     .book-card {
       flex-direction: column;
@@ -512,9 +485,17 @@
       padding: 24px;
       gap: 16px;
     }
+    .book-cover {
+      width: 100px;
+      align-self: center;
+    }
     .amazon-btn {
       align-self: stretch;
+      display: flex;
       justify-content: center;
+    }
+    .amazon-badge {
+      height: 40px;
     }
   }
 </style>
@@ -573,23 +554,15 @@
   </article>
 
   <section class="book-card" aria-label="Featured book" itemscope itemtype="https://schema.org/Book">
+    <img src="/img/the-last-skill-cover.jpg" alt="The Last Skill: What AI Will Never Own — Book cover" class="book-cover" itemprop="image" width="140" height="215" loading="lazy">
     <div class="book-card-info">
       <span class="book-card-eyebrow">Our first title</span>
       <h2 class="book-card-title" itemprop="name">The Last Skill: What AI Will Never Own</h2>
       <span class="book-card-author"><span itemprop="author">Juan C. Guerrero</span> &nbsp;&middot;&nbsp; <time itemprop="datePublished" datetime="2026">2026</time></span>
       <span class="book-card-hook" itemprop="description">What remains ours when machines can do the rest.</span>
     </div>
-    <a href="https://amazon.com" class="amazon-btn" target="_blank" rel="noopener noreferrer" aria-label="Buy The Last Skill on Amazon">
-      <div class="amazon-btn-content">
-        <span class="amazon-btn-label">Available on</span>
-        <span class="amazon-btn-wordmark">amazon</span>
-        <div class="amazon-smile" aria-hidden="true">
-          <svg width="52" height="10" viewBox="0 0 52 10" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
-            <path d="M2 7.5C10 4 22 1.5 38 4.5" stroke="#f59e0b" stroke-width="1.8" stroke-linecap="round" fill="none"/>
-            <path d="M34 2L38.5 4.8L34.5 7" stroke="#f59e0b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-          </svg>
-        </div>
-      </div>
+    <a href="https://www.amazon.com/dp/B0GSYGDR7L" class="amazon-btn" target="_blank" rel="noopener noreferrer" aria-label="Buy The Last Skill on Amazon Kindle">
+      <img src="/img/amazon-kindle-badge.png" alt="Available on Amazon Kindle" class="amazon-badge">
     </a>
   </section>
   </main>
