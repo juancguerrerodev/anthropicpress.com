@@ -1,0 +1,16 @@
+{
+  "name": "Anthropic Press",
+  "short_name": "Anthropic Press",
+  "description": "A book publisher rooted in the belief that human authorship remains the primary fact of any universe worth understanding.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#FAF8F3",
+  "theme_color": "#1a1a18",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    }
+  ]
+}

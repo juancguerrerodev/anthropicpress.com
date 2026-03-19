@@ -1,0 +1,17 @@
+# Firebase
+firebase-debug.log
+.firebase/
+
+# Playwright artifacts
+.playwright-mcp/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local
+
+# OG template (not needed in production)
+og/og-template.html
